@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 自实现的消息处理类 -->
+    <bean id="testProcessor" class="TestProcessor"/>
+    <!-- 利用spring生成一个TradeConsumer对象，并执行init方法-->
+    <bean id="tradeConsumer" class="com.rocketmq.trade.common.rocketmq.TradeMQConsumer" init-method="init">
+        <!-- 配置对象的相关属性-->
+        <property name="groupName" value="TradeConsumerGroup"/>
+        <property name="namesrvAddr" value="node14:9876;node15:9876"/>
+        <property name="topic" value="testtopic"/>
+        <property name="iMessageProcessor" ref="testProcessor"/>
+    </bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 自实现的用户模块处理取消订单消息处理类 -->
+    <bean id="cancelOrderProcessor" class="com.rocketmq.trade.goods.mq.processor.CancelOrderProcessor"/>
+
+    <!-- 利用spring生成一个TradeConsumer对象，并执行init方法-->
+    <bean id="orderConsumer" class="com.rocketmq.trade.common.rocketmq.TradeMQConsumer" init-method="init">
+        <!-- 用户端接收MQ消息的相关配置, 取消订单时的order模块发送消息<Topic, Tag> => <orderTopic, cancel> -->
+        <property name="groupName" value="goods_orderTopic_cancel_group"/>
+        <property name="namesrvAddr" value="node14:9876;node15:9876"/>
+        <property name="topic" value="orderTopic"/>
+        <property name="tag" value="cancel"/>
+        <property name="iMessageProcessor" ref="cancelOrderProcessor"/>
+    </bean>
+</beans>

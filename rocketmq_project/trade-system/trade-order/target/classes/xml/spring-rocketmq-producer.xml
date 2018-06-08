@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="tradeProducer" class="com.rocketmq.trade.common.rocketmq.TradeMQProducer" init-method="init">
+        <!-- order端发送消息的相关配置 -->
+        <property name="groupName" value="OrderProducerGroup"/>
+        <property name="namesrvAddr" value="node14:9876;node15:9876"/>
+    </bean>
+</beans>

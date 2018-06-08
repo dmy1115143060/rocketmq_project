@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置用户服务的动态带代理对象 -->
+    <bean id="userClient" class="com.rocketmq.trade.common.client.RestClientProxyFactoryBeanSpring">
+        <!-- 用户服务接口 -->
+        <property name="serviceInterface" value="com.rocketmq.trade.common.api.IUserApi"/>
+        <!-- 用户服务对应的服务器枚举类 -->
+        <property name="serverEnum" value="USER"/>
+    </bean>
+
+    <!-- 配置订单服务的动态带代理对象 -->
+    <bean id="orderClient" class="com.rocketmq.trade.common.client.RestClientProxyFactoryBeanSpring">
+        <!-- 订单服务接口 -->
+        <property name="serviceInterface" value="com.rocketmq.trade.common.api.IOrderApi"/>
+        <property name="serverEnum" value="ORDER"/>
+    </bean>
+
+    <!-- 配置商品服务的动态带代理对象 -->
+    <bean id="goodsClient" class="com.rocketmq.trade.common.client.RestClientProxyFactoryBeanSpring">
+        <!-- 商品服务接口 -->
+        <property name="serviceInterface" value="com.rocketmq.trade.common.api.IGoodsApi"/>
+        <property name="serverEnum" value="GOODS"/>
+    </bean>
+
+    <!-- 配置支付服务的动态带代理对象 -->
+    <bean id="payClient" class="com.rocketmq.trade.common.client.RestClientProxyFactoryBeanSpring">
+        <!-- 支付服务接口 -->
+        <property name="serviceInterface" value="com.rocketmq.trade.common.api.IPayApi"/>
+        <property name="serverEnum" value="PAY"/>
+    </bean>
+
+    <!-- 配置优惠券服务的动态带代理对象 -->
+    <bean id="couponClient" class="com.rocketmq.trade.common.client.RestClientProxyFactoryBeanSpring">
+        <!-- 优惠券服务接口 -->
+        <property name="serviceInterface" value="com.rocketmq.trade.common.api.ICouponApi"/>
+        <property name="serverEnum" value="COUPON"/>
+    </bean>
+</beans>

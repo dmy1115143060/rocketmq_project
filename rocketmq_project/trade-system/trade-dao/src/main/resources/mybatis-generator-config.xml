@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <classPathEntry location="G:\Maven\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection userId="root" password="zhang@331" driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://223.3.91.186:3306/trade"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="true"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="com.rocketmq.trade.entity" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="sqlmapper" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="com.rocketmq.trade.mapper" type="XMLMAPPER" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 配置数据库表 -->
+
+        <table tableName="trade_goods" enableCountByExample="true" enableDeleteByExample="true" 
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+            <generatedKey column="goods_id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="trade_coupon" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_user_money_log" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_goods_number_log" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_user" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+            <generatedKey column="user_id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="trade_order" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_pay" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_mq_consumer_log" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+        <table tableName="trade_mq_producer_temp" enableCountByExample="true" enableDeleteByExample="true"
+               enableDeleteByPrimaryKey="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="true" enableInsert="true" enableUpdateByPrimaryKey="true">
+        </table>
+
+    </context>
+</generatorConfiguration>

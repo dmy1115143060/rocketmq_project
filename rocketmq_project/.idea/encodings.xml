@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/trade-system" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-coupon" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-goods" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/trade-system/trade-web" charset="UTF-8" />
+  </component>
+</project>
